@@ -8,8 +8,8 @@ A collection of custom ReaScripts developed to enhance workflow in REAPER.
 
 | Script Name | Description |
 |-------------|-------------|
-| `Move Item to Next or New Track.lua` | Moves selected media item(s) to the track below; creates a new track if none exists. |
-| `Move Item to Previous or New Track.lua` | Moves selected media item(s) to the track above; creates a new track if none exists. |
+| `Move Selected Item to Next Track (Auto-Create Track).lua` | Moves selected media item(s) to the Next track; creates a new track if none exists. |
+| `Move Selected Item to Previous Track (Auto-Create Track).lua` | Moves selected media item(s) to the Previous track; creates a new track if none exists. |
 
 ---
 
