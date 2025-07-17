@@ -1,4 +1,3 @@
--- Move selected items to previous track, creating one if needed
 function move_items_to_previous_track()
     local item_count = reaper.CountSelectedMediaItems(0)
     if item_count == 0 then return end
@@ -6,25 +5,40 @@ function move_items_to_previous_track()
     reaper.Undo_BeginBlock()
     reaper.PreventUIRefresh(1)
 
+    local track_item_map = {}
+
+    -- Group items by their source track
     for i = 0, item_count - 1 do
         local item = reaper.GetSelectedMediaItem(0, i)
         local src_track = reaper.GetMediaItemTrack(item)
+        if not track_item_map[src_track] then
+            track_item_map[src_track] = {}
+        end
+        table.insert(track_item_map[src_track], item)
+    end
+
+    -- Move items track-by-track
+    for src_track, items in pairs(track_item_map) do
         local track_index = reaper.GetMediaTrackInfo_Value(src_track, "IP_TRACKNUMBER")
 
+        local prev_track
         if track_index > 1 then
-            local prev_track = reaper.GetTrack(0, track_index - 2) -- zero-based
-            reaper.MoveMediaItemToTrack(item, prev_track)
+            prev_track = reaper.GetTrack(0, track_index - 2) -- zero-based
         else
-            -- Insert track at top
+            -- Create new track at the top
             reaper.InsertTrackAtIndex(0, true)
-            local new_track = reaper.GetTrack(0, 0)
-            reaper.MoveMediaItemToTrack(item, new_track)
+            prev_track = reaper.GetTrack(0, 0)
+        end
+
+        -- Move all items from this track together
+        for _, item in ipairs(items) do
+            reaper.MoveMediaItemToTrack(item, prev_track)
         end
     end
 
     reaper.PreventUIRefresh(-1)
     reaper.UpdateArrange()
-    reaper.Undo_EndBlock("Move items to previous track (create if needed)", -1)
+    reaper.Undo_EndBlock("Move selected items to previous track (grouped)", -1)
 end
 
 move_items_to_previous_track()
