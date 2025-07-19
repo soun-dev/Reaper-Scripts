@@ -1,3 +1,10 @@
+-- Move Items To Previous Track
+-- ReaScript Name: Move Selected Items to Previous Track (Create if doesn't exist).
+-- Author: Nirmal Dev
+-- Description: Moves selected items to the previous track. 
+-- Creates the track if it doesn't exist.
+-- Version: 1.0
+
 function move_items_to_previous_track()
     local item_count = reaper.CountSelectedMediaItems(0)
     if item_count == 0 then return end
