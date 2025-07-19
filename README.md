@@ -10,6 +10,7 @@ A collection of custom ReaScripts developed to enhance workflow in REAPER.
 |-------------|-------------|
 | `Move Selected Item to Next Track (Auto-Create Track).lua` | Moves selected media item(s) to the Next track; creates a new track if none exists. |
 | `Move Selected Item to Previous Track (Auto-Create Track).lua` | Moves selected media item(s) to the Previous track; creates a new track if none exists. |
+| `Close Video Window.lua` | Closes video window if open. |
 
 ---
 
