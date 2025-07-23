@@ -1,5 +1,4 @@
--- Move Items To Previous Track
--- ReaScript Name: Move Selected Items to Previous Track (Create if doesn't exist).
+-- Move Selected Items to Previous Track (Create if doesn't exist).
 -- Author: Nirmal Dev
 -- Description: Moves selected items to the previous track. 
 -- Creates the track if it doesn't exist.
