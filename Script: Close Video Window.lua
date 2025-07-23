@@ -1,5 +1,4 @@
--- Close Video Window silently
--- ReaScript Name: Close Video Window (Silent)
+-- Close Video Window (Silent)
 -- Author: Nirmal Dev
 -- Description: Silently closes the Video window if open.
 -- Version: 1.1
