@@ -1,6 +1,7 @@
--- @description Move edit cursor backward to previous item edge or marker (includes project start)
--- @version 1.2
--- @author ChatGPT
+-- Moves Edit Cursor Backwards to Item Edges and Markers (All Tracks)
+-- Author: Nirmal Dev
+-- Description: Moves the edit cursor backwards to the next item edge (start or end) or project marker across all tracks.
+-- Version: 1.0
 
 local function get_all_targets()
     local targets = {}
