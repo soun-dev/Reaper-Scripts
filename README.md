@@ -6,11 +6,14 @@ A collection of custom ReaScripts developed to enhance workflow in REAPER.
 
 ## 📁 Scripts
 
-| Script Name | Description |
-|-------------|-------------|
-| `Move Selected Item to Next Track (Auto-Create Track).lua` | Moves selected media item(s) to the Next track; creates a new track if none exists. |
-| `Move Selected Item to Previous Track (Auto-Create Track).lua` | Moves selected media item(s) to the Previous track; creates a new track if none exists. |
-| `Close Video Window.lua` | Closes video window if open. |
+| Script Name                                                                     | Description                                                                             | Path                                                                                       |
+| ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| `Script: Move Selected Item to Next Track (Auto-Create Track).lua`              | Moves selected media item(s) to the next track; creates a new track if none exists.     | `Editing/Script: Move Selected Item to Next Track (Auto-Create Track).lua`                 |
+| `Script: Move Selected Item to Previous Track (Auto-Create Track).lua`          | Moves selected media item(s) to the previous track; creates a new track if none exists. | `Editing/Script: Move Selected Item to Previous Track (Auto-Create Track).lua`             |
+| `Script: Moves Edit Cursor Backward to Item Edges and Markers (All Tracks).lua` | Moves the edit cursor backward to nearest item edges or markers on any track.           | `Navigation/Script: Moves Edit Cursor Backward to Item Edges and Markers (All Tracks).lua` |
+| `Script: Moves Edit Cursor Forward to Item Edges and Markers (All Tracks).lua`  | Moves the edit cursor forward to nearest item edges or markers on any track.            | `Navigation/Script: Moves Edit Cursor Forward to Item Edges and Markers (All Tracks).lua`  |
+| `Script: Close Video Window.lua`                                                | Closes the video window if it is open.                                                  | `Video/Script: Close Video Window.lua`                                                     |
+
 
 ---
 
