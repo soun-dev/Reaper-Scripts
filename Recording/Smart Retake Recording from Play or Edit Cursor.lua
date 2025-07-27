@@ -48,4 +48,3 @@ end
 reaper.SetExtState("RECORD_LOOP", "PrevPos", tostring(recordPos), false)
 
 reaper.Undo_EndBlock("Low-Lag Smart Retake", -1)
-
