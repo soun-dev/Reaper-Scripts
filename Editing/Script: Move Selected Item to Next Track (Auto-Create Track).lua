@@ -1,5 +1,5 @@
 -- Move Selected Items to Next Track (Create if doesn't exist).
--- Author: Nirmal Dev
+-- Author: soun-dev
 -- Description: Moves selected items to the next track. 
 -- Creates the track if it doesn't exist.
 -- Version: 1.0
