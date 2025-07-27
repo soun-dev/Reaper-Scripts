@@ -1,5 +1,5 @@
 -- Moves Edit Cursor Forward to Item Edges and Markers (All Tracks)
--- Author: Nirmal Dev
+-- Author: soun-dev
 -- Description: Moves the edit cursor forward to the next item edge (start or end) or project marker across all tracks.
 -- Version: 1.0
 
