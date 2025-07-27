@@ -1,5 +1,5 @@
--- @description Low-Lag Smart Retake from Play or Edit Cursor
--- @version 1.3 (optimized playback punch-in)
+-- @description Low-Lag Smart Retake from Play or Edit Cursor (Non-Destructive)
+-- @version 1.4
 -- @author You
 
 local playState = reaper.GetPlayState()
@@ -13,9 +13,8 @@ local recordPos = nil
 reaper.Undo_BeginBlock()
 
 if isRecording then
-  -- Delete and retry
+  -- Stop recording and return to previous retake point
   reaper.Main_OnCommand(1013, 0) -- Stop
-  reaper.Main_OnCommand(40006, 0) -- Delete all recorded media
   if prevPos then
     reaper.SetEditCurPos(prevPos, true, false)
     recordPos = prevPos
@@ -23,28 +22,28 @@ if isRecording then
     recordPos = reaper.GetCursorPosition()
   end
 
-  reaper.Main_OnCommand(1016, 0)
-  reaper.Main_OnCommand(1013, 0)
-  reaper.Main_OnCommand(1017, 0) -- Record
+  reaper.Main_OnCommand(1016, 0) -- Prepare for recording
+  reaper.Main_OnCommand(1013, 0) -- Stop again just in case
+  reaper.Main_OnCommand(1017, 0) -- Start recording
 
 else
   if isPlaying then
-    -- Jump and start record without double stop
+    -- Jump to play position and start recording
     recordPos = reaper.GetPlayPosition()
     reaper.SetEditCurPos(recordPos, true, false)
-    reaper.Main_OnCommand(1013, 0) -- quick stop
+    reaper.Main_OnCommand(1013, 0) -- Stop
     reaper.Main_OnCommand(1017, 0) -- Record
   else
     -- Stopped: record from edit cursor
     recordPos = reaper.GetCursorPosition()
     reaper.SetEditCurPos(recordPos, true, false)
-    reaper.Main_OnCommand(1016, 0)
+    reaper.Main_OnCommand(1016, 0) -- Prepare recording
     reaper.Main_OnCommand(1013, 0)
     reaper.Main_OnCommand(1017, 0) -- Record
   end
 end
 
--- Save position for re-record
+-- Save position for next re-record
 reaper.SetExtState("RECORD_LOOP", "PrevPos", tostring(recordPos), false)
 
-reaper.Undo_EndBlock("Low-Lag Smart Retake", -1)
+reaper.Undo_EndBlock("Low-Lag Smart Retake (Non-Destructive)", -1)
