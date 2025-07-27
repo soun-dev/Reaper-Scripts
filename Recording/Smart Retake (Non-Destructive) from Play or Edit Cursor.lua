@@ -1,6 +1,8 @@
--- @description Low-Lag Smart Retake from Play or Edit Cursor (Non-Destructive)
--- @version 1.4
--- @author You
+-- Smart Retake (Non-Destructive) from Play or Edit Cursor
+-- Author: soun-dev
+-- Description: Performs a smart retake from the play or edit cursor with minimal delay, 
+-- without deleting previous takes. Ideal for fast, non-destructive punch-ins.
+-- Version: 1.0
 
 local playState = reaper.GetPlayState()
 local isPlaying = (playState & 1) == 1
