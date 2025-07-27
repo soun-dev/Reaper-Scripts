@@ -1,5 +1,5 @@
 -- Close Video Window (Silent)
--- Author: Nirmal Dev
+-- Author: soun-dev
 -- Description: Silently closes the Video window if open.
 -- Version: 1.1
 
