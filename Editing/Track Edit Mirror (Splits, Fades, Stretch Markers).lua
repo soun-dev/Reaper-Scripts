@@ -1,16 +1,16 @@
---[[
-ReaScript Name: Track Edit Mirror (Splits, Fades, Exact Stretch Markers)
-Description:
-    Mirrors edits from reference track to target track, including:
-    - Item positions and lengths
-    - Fades and fade shapes/directions
-    - Stretch markers with exact position, srcpos, and slope, adjusted for playrate
-Instructions:
-    1. Select reference track FIRST.
-    2. Select target track SECOND.
-    3. Run script.
-    NOTE: Deletes all items in target track before mirroring.
-]]
+-- Track Edit Mirror (Splits, Fades, Stretch Markers)
+-- Author: soun-dev
+-- Description: Mirrors edits from reference track to target track, 
+-- including:
+    -- Item positions and lengths
+    -- Fades and fade shapes/directions
+    -- Stretch markers with exact position
+-- Instructions:
+    -- 1. Select reference track FIRST.
+    -- 2. Select target track SECOND.
+    -- 3. Run script.
+    -- NOTE: Deletes all items in target track before mirroring.
+-- Version: 1.0
 
 local function ClearStretchMarkerExtState()
     for i=1,20 do
