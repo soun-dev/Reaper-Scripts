@@ -4,7 +4,7 @@
 -- including:
     -- Item positions and lengths
     -- Fades and fade shapes/directions
-    -- Stretch markers with exact position
+    -- Stretch markers
 -- Instructions:
     -- 1. Select reference track FIRST.
     -- 2. Select target track SECOND.
